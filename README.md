@@ -5,7 +5,7 @@ A collection of automation tools designed to streamline workspace management, sp
 ## Features ✨
 
 *   **System Updates:** Automatically runs a full `apt update && apt upgrade -y`.
-*   **User Management:** Creates a new user (e.g., `m220`) with `sudo` privileges and sets up a customized `Zsh` environment.
+*   **User Management:** Creates a new user with `sudo` privileges and sets up a customized `Zsh` environment.
 *   **Secure Credential Handling:** Sets up encrypted passwords in real-time without hardcoding credentials in the script.
 *   **Optional Installations:**
     *   🐳 **Docker & Docker Compose:** Full installation including configuration for non-root execution.
