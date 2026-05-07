@@ -1,23 +1,29 @@
-# 🚀 LXC Setup & Automation Scripts
+# Proxmox LXC Setup Automation 🚀
 
-ברוכים הבאים למאגר הסקריפטים שלי! מאגר זה נועד לרכז כלים לאוטומציה של סביבת העבודה שלי, בדגש על הקמה מהירה של קונטיינרים (LXC) ב-**Proxmox**.
+A collection of automation tools designed to streamline workspace management, specifically focused on the rapid deployment and configuration of LXC containers in Proxmox. This script eliminates repetitive manual setup tasks for new servers.
 
-## ✨ סקריפט הקמת LXC מודולרי (`setup_lxc.sh`)
-זהו סקריפט אינטראקטיבי שחוסך את כל ההגדרות הידניות המשעממות שצריך לעשות בכל פעם שמקימים שרת חדש.
+## Features ✨
 
-### 🛠️ מה הסקריפט מבצע?
-* **עדכון מערכת:** מבצע `apt update && upgrade` מלא.
-* **ניהול משתמשים:** יוצר משתמש חדש (למשל `m220`) עם הרשאות **Sudo** וסביבת **Zsh**.
-* **אבטחה:** הגדרת סיסמה מוצפנת בזמן אמת (ללא שמירת סיסמאות בקוד).
-* **התקנות לבחירה:**
-    * **Docker & Docker Compose:** התקנה מלאה כולל הרשאות הרצה ללא sudo.
-    * **Tailscale:** התקנת ה-Client לחיבור מאובטח לרשת המקומית.
-* **ניקיון:** הסרת קבצי התקנה זמניים בסיום התהליך.
+*   **System Updates:** Automatically runs a full `apt update && apt upgrade -y`.
+*   **User Management:** Creates a new user (e.g., `m220`) with `sudo` privileges and sets up a customized `Zsh` environment.
+*   **Secure Credential Handling:** Sets up encrypted passwords in real-time without hardcoding credentials in the script.
+*   **Optional Installations:**
+    *   🐳 **Docker & Docker Compose:** Full installation including configuration for non-root execution.
+    *   🔒 **Tailscale:** Client installation for secure local network connectivity.
+*   **Cleanup:** Automatically removes temporary installation files after completion.
 
+## Quick Start (One-Liner) ⚡
 
-
-## ⚡ הרצה מהירה (One-Liner)
-כדי להגדיר LXC חדש תוך דקה, פשוט הריצו את הפקודה הבאה בטרמינל (כ-root):
+Run the following command as `root` in your newly created Debian/Ubuntu LXC container:
 
 ```bash
-curl -sSL [https://raw.githubusercontent.com/Motty220/scripts/main/setup_lxc.sh](https://raw.githubusercontent.com/Motty220/scripts/main/setup_lxc.sh) | bash
+curl -sSL https://raw.githubusercontent.com/Motty220/scripts/main/setup_lxc.sh | bash
+```
+
+## Prerequisites
+
+*   A Debian or Ubuntu-based LXC container running on Proxmox.
+*   Initial access as the `root` user to run the installation script.
+
+---
+*Created by [Motty220](https://github.com/Motty220)*
